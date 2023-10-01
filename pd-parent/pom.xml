@@ -136,7 +136,7 @@
         <jjwt.version>0.7.0</jjwt.version>
         <qcloudsms.version>1.0.6</qcloudsms.version>
         <bce-java-sdk.version>0.10.21</bce-java-sdk.version>
-
+        <mapstruct-version>1.5.5.Final</mapstruct-version>
 
         <hutool.version>5.1.0</hutool.version>
         <antisamy.version>1.5.7</antisamy.version>
@@ -257,6 +257,13 @@
 <!--                <artifactId>dozer-spring-boot-starter</artifactId>-->
 <!--                <version>${dozer.version}</version>-->
 <!--            </dependency>-->
+
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${mapstruct-version}</version>
+            </dependency>
+
 
             <!-- swagger2 -->
             <dependency>

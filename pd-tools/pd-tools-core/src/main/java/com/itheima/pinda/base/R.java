@@ -11,6 +11,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
+import org.apache.commons.lang3.StringUtils;
 
 
 /**
@@ -109,7 +110,7 @@ public class R<T> {
      * @return
      */
     public static <E> R<E> fail(int code, String msg) {
-        return new R<>(code, null, (msg == null || msg.isEmpty()) ? DEF_ERROR_MESSAGE : msg);
+        return new R<>(code, null, (StringUtils.isBlank(msg) ? DEF_ERROR_MESSAGE : msg));
     }
 
     public static <E> R<E> fail(String msg) {
@@ -117,7 +118,7 @@ public class R<T> {
     }
 
     public static <E> R<E> fail(String msg, Object... args) {
-        String message = (msg == null || msg.isEmpty()) ? DEF_ERROR_MESSAGE : msg;
+        String message = StringUtils.isBlank(msg) ? DEF_ERROR_MESSAGE : msg;
         return new R<>(OPERATION_EX_CODE, null, String.format(message, args));
     }
 

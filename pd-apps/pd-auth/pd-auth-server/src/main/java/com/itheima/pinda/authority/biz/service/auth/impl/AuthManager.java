@@ -41,7 +41,7 @@ public class AuthManager {
     private final JwtTokenServerUtils jwtTokenServerUtils;
     private final UserService userService;
     private final ResourceService resourceService;
-    private final UserDtoConverter userConverter;
+    private final UserDtoConverter userDtoConverter;
 
 
     /**
@@ -67,7 +67,7 @@ public class AuthManager {
         }
         //封装数据
         LoginDTO loginDTO = LoginDTO.builder()
-                .user(userConverter.user2Dto(user))
+                .user(userDtoConverter.user2Dto(user))
                 .token(token)
                 .permissionsList(permissionsList)
                 .build();
@@ -75,7 +75,7 @@ public class AuthManager {
     }
 
     //生成jwt token
-    private final Token generateUserToken(User user) {
+    private Token generateUserToken(User user) {
         JwtUserInfo userInfo = new JwtUserInfo(user.getId(),
                 user.getAccount(),
                 user.getName(),

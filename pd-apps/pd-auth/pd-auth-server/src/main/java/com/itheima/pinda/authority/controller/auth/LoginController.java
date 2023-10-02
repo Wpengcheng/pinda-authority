@@ -6,12 +6,11 @@ import com.itheima.pinda.authority.dto.auth.LoginDTO;
 import com.itheima.pinda.authority.dto.auth.LoginParamDTO;
 import com.itheima.pinda.base.R;
 import com.itheima.pinda.exception.BizException;
-import com.wf.captcha.ArithmeticCaptcha;
+import com.itheima.pinda.log.annotation.SysLog;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,6 +28,7 @@ import java.io.IOException;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/anno")
+
 public class LoginController {
 
 
@@ -48,6 +48,7 @@ public class LoginController {
      */
     @ApiOperation(value = "登录", notes = "登录")
     @PostMapping(value = "/login")
+    @SysLog("登录日志")
     public R<LoginDTO> login(@Validated @RequestBody LoginParamDTO login) throws BizException {
         log.info("account={}", login.getAccount());
         if (validateCodeService.check(login.getKey(), login.getCode())) {

@@ -3,6 +3,7 @@ package com.itheima.pinda.authority.biz.converter;
 import com.itheima.pinda.authority.dto.auth.UserDTO;
 import com.itheima.pinda.authority.entity.auth.User;
 import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
 
 /**
  * @Author 方唐镜
@@ -10,8 +11,12 @@ import org.mapstruct.Mapper;
  * @Description
  */
 
-@Mapper
+@Mapper(componentModel = "Spring")
 public interface UserDtoConverter {
+
+
+    UserDtoConverter INSTANCE = Mappers.getMapper(UserDtoConverter.class);
+
 
     UserDTO user2Dto(User user);
 }

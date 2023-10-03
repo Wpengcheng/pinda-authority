@@ -1,4 +1,4 @@
-package com.itheima.pinda.authority.biz.common;
+package com.itheima.pinda.authority.biz.service.common;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.itheima.pinda.authority.entity.common.OptLog;

@@ -117,7 +117,7 @@
         <knife4j.version>2.0.1</knife4j.version>
         <springfox.swagger2.version>2.9.2</springfox.swagger2.version>
         <swagger.version>1.5.21</swagger.version>
-<!--        <dozer.version>6.5.0</dozer.version>-->
+        <dozer.version>6.5.2</dozer.version>
         <lombok.version>1.18.10</lombok.version>
         <easy-captcha.version>1.6.2</easy-captcha.version>
         <guava.version>20.0</guava.version>
@@ -253,11 +253,11 @@
             </dependency>
 
             <!-- 对象转换 -->
-<!--            <dependency>-->
-<!--                <groupId>com.github.dozermapper</groupId>-->
-<!--                <artifactId>dozer-spring-boot-starter</artifactId>-->
-<!--                <version>${dozer.version}</version>-->
-<!--            </dependency>-->
+            <dependency>
+                <groupId>com.github.dozermapper</groupId>
+                <artifactId>dozer-spring-boot-starter</artifactId>
+                <version>${dozer.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>org.mapstruct</groupId>

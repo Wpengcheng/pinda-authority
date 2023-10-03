@@ -1,7 +1,5 @@
 package com.itheima.pinda.authority.biz.converter;
 
-import com.itheima.pinda.authority.dto.auth.UserDTO;
-import com.itheima.pinda.authority.entity.auth.User;
 import com.itheima.pinda.authority.entity.common.OptLog;
 import com.itheima.pinda.log.entity.OptLogDTO;
 import org.mapstruct.Mapper;

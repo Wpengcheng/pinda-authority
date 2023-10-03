@@ -15,6 +15,7 @@ import lombok.ToString;
 @ToString(callSuper = true)
 @ApiModel(value = "ResourceTreeDTO", description = "资源树")
 public class MenuTreeDTO extends Menu implements ITreeNode<MenuTreeDTO, Long> {
+
     private List<MenuTreeDTO> children;
 
     private String label;
